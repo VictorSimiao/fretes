@@ -8,13 +8,17 @@ option objc_class_prefix = "HLW";
 package br.com.zup.edu;
 
 service FretesService {
-  rpc send (FretesRequest) returns (FretesReply) {}
+
+  rpc calculaFrete(FreteRequest) returns (FreteResponse){}
+
 }
 
-message FretesRequest {
-  string name = 1;
+message FreteRequest {
+  string cep = 1;
 }
 
-message FretesReply {
-  string message = 1;
+message FreteResponse {
+  double valor = 1;
+  string cep = 2;
+
 }
